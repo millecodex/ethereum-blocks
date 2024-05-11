@@ -26,8 +26,8 @@ def fetch_tx(start_block, end_block, chunk_size):
         None
 
     Files created:
-        Each chunk of transactions is written to a separate file in the 'data' directory. Files are named using the format 'blk_{start_block}_{end_block}.json'.
-
+        Each chunk of transactions is written to a separate file in the 'data' directory. 
+        Files are named using the format 'blk_{start_block}_{end_block}.json'.
     """
     # Initialize timer for stats
     start = time.time()
