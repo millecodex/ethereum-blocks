@@ -121,10 +121,10 @@ start_block = 19801000
 end_block   = 19807999  
 chunk_size  = 100
 ```
-the run time is about 3.5 hrs. So lets say we need six months worth of data to build a model and track funds, this is about 26.5 days of runtime from a single cpu. There should be opportunity here to parallelize. If one API takes 1.5 seconds, then without hitting the rate limiter there should be a 6-8x gain by parallel processing. This could bring the time down to 4 days for data collection.
+The run time is about 3.5 hrs. So lets say we need six months worth of data to build a model and track funds, this is about 26.5 days of runtime from a single cpu. There should be opportunity here to parallelize. If one API call takes 1.5 seconds, then without hitting the rate limiter there should be a 6-8x gain by parallel processing. This could bring the time down to 4 days for data collection (from a single machine).
 
 ### Size
-100 block chunks are about 28 mb, so 1 days block are about 2 GB of data. This is in JSON, presumably there will be a reduction by other methods or by loading in a database. Scaled up to six months and this is 3.5 TB. This seems quite high, more thought needed here; fact check this.
+100 block chunks are about 28 mb, so 1 day's blocks are about 2 GB of data. This is in JSON, presumably there will be a reduction by other methods or by loading in a database. Scaled up to six months and this is 3.5 TB. This seems quite high, more thought needed here; fact check this.
 
 ## License
 This project is dedicated to the public domain under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication. See the [LICENSE](LICENSE) file for more details.
