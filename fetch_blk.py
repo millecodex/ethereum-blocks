@@ -15,7 +15,21 @@ if not os.path.exists(directory):
     os.makedirs(directory)
 
 def fetch_tx(start_block, end_block, chunk_size):
-    # Initialize timer
+    """ P
+    arameters:
+        api_key (str): The Etherscan API key used for making API requests.
+        start_block (int): The starting block number of the range to fetch transactions from.
+        end_block (int): The ending block number of the range to fetch transactions from.
+        chunk_size (int): The number of blocks to query in each API call.
+
+    Returns:
+        None
+
+    Files created:
+        Each chunk of transactions is written to a separate file in the 'data' directory. Files are named using the format 'blk_{start_block}_{end_block}.json'.
+
+    """
+    # Initialize timer for stats
     start = time.time()
     
     for chunk_start in range(start_block, end_block + 1, chunk_size):
@@ -43,7 +57,7 @@ def fetch_tx(start_block, end_block, chunk_size):
             except json.JSONDecodeError:
                 print("Failed to decode JSON from response.")
             
-        filename = f'{directory}/blk_{chunk_start}_{chunk_end}.json'  # Adjust the file path
+        filename = f'{directory}/blk_{chunk_start}_{chunk_end}.json'
         # Write the transactions to a file with pretty printing
         with open(filename, 'w') as file:
             json.dump(transactions, file, indent=4)
@@ -57,7 +71,6 @@ def fetch_tx(start_block, end_block, chunk_size):
     
     print(f"Total time taken: {total_time:.2f} seconds")
     print(f"Average time per block: {average_time:.2f} seconds")
-
 
 # params
 start_block = 19800000  # integer block number
