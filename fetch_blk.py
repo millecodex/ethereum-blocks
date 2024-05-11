@@ -15,8 +15,8 @@ if not os.path.exists(directory):
     os.makedirs(directory)
 
 def fetch_tx(start_block, end_block, chunk_size):
-    """ P
-    arameters:
+    """ 
+    Parameters:
         api_key (str): The Etherscan API key used for making API requests.
         start_block (int): The starting block number of the range to fetch transactions from.
         end_block (int): The ending block number of the range to fetch transactions from.
