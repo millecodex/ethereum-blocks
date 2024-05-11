@@ -98,5 +98,21 @@ A sample JSON structure of an Ethereum block:
 }
 ```
 
+### Sample Output
+For downloading 500 blocks:
+```plaintext
+Data has been written to tx_19800000_19800049.json
+Data has been written to tx_19800050_19800099.json
+Data has been written to tx_19800100_19800149.json
+Data has been written to tx_19800150_19800199.json
+.
+.
+.
+Data has been written to tx_19800400_19800449.json
+Data has been written to tx_19800450_19800499.json
+Total time taken: 701.71 seconds
+Average time per block: 1.40 seconds
+```
+
 ## License
 This project is dedicated to the public domain under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication. See the [LICENSE](LICENSE) file for more details.
