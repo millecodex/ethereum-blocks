@@ -1,10 +1,7 @@
 # Ethereum Block Downloader
 This project is designed to download Ethereum block data using the Etherscan API. It chunks the data for efficient processing and stores it locally. This allows for analysis and usage of historical block data for Ethereum.
 
-## Getting Started
-To get this project running on your local machine for development and testing purposes, follow these instructions.
-
-### Prerequisites
+## Prerequisites
 - Python 3.x
 - Requests library (`pip install requests`)
 - An API key from [Etherscan.io](https://etherscan.io/apis)
@@ -45,7 +42,7 @@ To use the Etherscan API effectively, you will need an API key. Here's how you c
 
 This method ensures that your API key remains secure and is not hard-coded into your source code, which is especially important if you plan to share your code publicly on platforms like GitHub.
 
-### To clone this Repo
+## To clone this Repo
 Clone the repository and navigate into the project directory:
 
 ```bash
@@ -53,7 +50,7 @@ git clone https://github.com/millecodex/ethereum-blocks.git
 cd ethereum-blocks
 ```
 
-### Installation
+## Installation
 Create a virtual environment and install the required packages:
 
 ```bash
@@ -62,7 +59,7 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-### Usage
+## Usage
 Run the script to start downloading blocks:
 
 ```bash
@@ -114,7 +111,7 @@ Total time taken: 701.71 seconds
 Average time per block: 1.40 seconds
 ```
 
-## Parallelisation
+## Dataset & Parallelisation
 Given a test to download about a days worth of blocks, 7000, as:
 ```python
 start_block = 19801000  
@@ -122,6 +119,8 @@ end_block   = 19807999
 chunk_size  = 100
 ```
 The run time is about 3.5 hrs. So lets say we need six months worth of data to build a model and track funds, this is about 26.5 days of runtime from a single cpu. There should be opportunity here to parallelize. If one API call takes 1.5 seconds, then without hitting the rate limiter there should be a 6-8x gain by parallel processing. This could bring the time down to 4 days for data collection (from a single machine).
+
+The block data is available in the [data](/data) folder.
 
 ### Size
 100 block chunks are about 28 mb, so 1 day's blocks are about 2 GB of data. This is in JSON, presumably there will be a reduction by other methods or by loading in a database. Scaled up to six months and this is 3.5 TB. This seems quite high, more thought needed here; fact check this.
