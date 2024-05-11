@@ -66,7 +66,6 @@ Run the script to start downloading blocks:
 python fetch_tx.py
 ```
 
-## How It Works
 The script fetches Ethereum blocks in chunks and saves each chunk to a separate JSON file in the `data/` directory. This process optimizes data handling and minimizes memory usage. A 50 block chunk will be about 14 mb. 
 
 ### Performance
