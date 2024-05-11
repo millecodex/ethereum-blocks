@@ -73,9 +73,9 @@ def fetch_tx(start_block, end_block, chunk_size):
     print(f"Average time per block: {average_time:.2f} seconds")
 
 # params
-start_block = 19806200  # integer block number
-end_block   = 19807999    # integer block number
-chunk_size  = 100
+start_block = 19808000  # integer block number
+end_block   = 19808024    # integer block number
+chunk_size  = 5
 
 # Fetch transactions
 fetch_tx(start_block, end_block, chunk_size)
