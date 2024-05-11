@@ -62,13 +62,6 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-### Configuration
-Set up your Etherscan API key in your environment:
-
-```bash
-export ETHERSCAN_API_KEY='YourApiKeyHere'
-```
-
 ### Usage
 Run the script to start downloading blocks:
 
@@ -106,5 +99,4 @@ A sample JSON structure of an Ethereum block:
 ```
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
+This project is dedicated to the public domain under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication. See the [LICENSE](LICENSE) file for more details.
